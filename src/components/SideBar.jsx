@@ -50,15 +50,15 @@ export default function SideBar() {
                             <img src={settingsIcon} alt="settingsIcon" className="py-2" />
                             <p className="font-montserrat text-xs font-medium text-[#8F95A9]">SETTINGS</p>
                         </div>
-
+                        <div  className="relative">
+                            <img src={curveRectangleDown} alt="curveRectangleDown" className="absolute top-0 right-0 "/>
+                        </div>
                     </div>
                     {/* Nav Items */}
 
                     {/* Log Out  */}
                     <div className=" w-[100%] flex flex-col justify-between ">
-                        <div  className="relative">
-                            <img src={curveRectangleDown} alt="curveRectangleDown" className="absolute top-0 right-0 "/>
-                        </div>
+                        
 
                         <div className="flex flex-col items-center cursor-pointer ">
                             <img src={logOut} alt="logOut" className=" py-2" />
