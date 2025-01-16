@@ -7,7 +7,7 @@ import ArrowDown from "../assets/ArrowDown.png"
 export default function NavBar() {
     return (
         <>
-            <nav className="bg-[#F9F9FB] h-[76px] flex flex-row items-center justify-around">
+            <nav className="bg-[#F9F9FB] h-[76px] flex flex-row items-center justify-between px-[3%]">
 
                 {/* Cosmediate Logo */}
                 <div className="cursor-pointer">
@@ -29,13 +29,13 @@ export default function NavBar() {
 
                 {/* Doctor Profile */}
                 <div className="flex flex-row items-center">
-                    <div className="relative py-0.5 px-1">
+                    <div className="relative py-0.5 px-1 cursor-pointer">
                         <img src={EllipseIcon} alt="EllipseIcon" className="absolute right-0 top-0" />
                         <img src={BellIcon} alt="BellIcon" />
                     </div>
                     <div className="px-3 flex flex-row items-center">
 
-                        <img src={DoctorProfileImg} alt="DoctorProfileImg" className="px-2" />
+                        <img src={DoctorProfileImg} alt="DoctorProfileImg" className="px-2 cursor-pointer" />
 
                         <div>
                             <div>
@@ -43,7 +43,7 @@ export default function NavBar() {
                                 <p className="font-montserrat text-xs font-normal text-[#8F95A9] font-medium ">Aēstec Amsterdam </p>
                             </div>
                         </div>
-                        <img src={ArrowDown} alt="DoctorProfileImg" className="px-10" />
+                        <img src={ArrowDown} alt="DoctorProfileImg" className="px-10 cursor-pointer" />
                     </div>
                 </div>
                 {/* Doctor Profile */}
