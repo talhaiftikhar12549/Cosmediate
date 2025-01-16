@@ -13,9 +13,9 @@ export default function SideBar() {
         <>
             <section className="flex flex-row h-[100%]">
 
-                {/* spacer bar */}
+                {/*left spacer bar */}
                 <div className="bg-[#F9F9FB] w-[5px]"></div>
-                {/* spacer bar */}
+                {/*left spacer bar */}
 
                 {/* SideBar */}
                 <div className="w-[106px] h-[100%] bg-[#F9F9FB] flex flex-col items-center">
