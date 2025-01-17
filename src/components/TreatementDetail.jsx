@@ -56,8 +56,7 @@ export default function TreatementDetail() {
                         >
                             <div className="bg-[#FFFFFF] px-[16px] border py-3 rounded-lg w-[90%] font-montserrat flex items-center text-[#71788E] font-normal text-[14px]">
                                 <p className="w-[97%]">Select Treatment...</p>
-                                <img src={ArrowDown} alt="DoctorProfileImg" className="px-2 cursor-pointer"
-                                />
+                                <img src={ArrowDown} alt="ArrowDown" className={`px-2 cursor-pointer  ${ dropDown && `rotate-180` }`}/>
                             </div>
                             <div className="px-4 border py-4 w-[7%] rounded-lg text-[8px] cursor-pointer">
                                 <img src={addsign} alt="addsign" />

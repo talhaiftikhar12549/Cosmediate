@@ -27,7 +27,7 @@ export default function HeroSection() {
                     <div className="">
                         <div className="rounded-lg p-[4px] flex flex-col justify-between w-[260px] h-[206px] bg-[#F3F6FF]">
                             <div
-                                onClick={() => SetCatogeryClick(0)} // Set active index for this div
+                                onClick={() => SetCatogeryClick(0)} 
                                 className={`cursor-pointer rounded-lg h-[48px] py-[4px] px-[16px] flex items-center transition-colors duration-300 ${catogeryClick === 0
                                     ? "bg-white text-[#6968EC] font-semibold"
                                     : "bg-[#F3F6FF] text-[#71788E] font-medium text-[14px]"
@@ -37,7 +37,7 @@ export default function HeroSection() {
                             </div>
 
                             <div
-                                onClick={() => SetCatogeryClick(1)} // Set active index for this div
+                                onClick={() => SetCatogeryClick(1)} 
                                 className={`cursor-pointer rounded-lg h-[48px] py-[4px] px-[16px] flex items-center transition-colors duration-300 ${catogeryClick === 1
                                     ? "bg-white text-[#6968EC] font-semibold"
                                     : "bg-[#F3F6FF] text-[#71788E] font-medium text-[14px]"
@@ -47,7 +47,7 @@ export default function HeroSection() {
                             </div>
 
                             <div
-                                onClick={() => SetCatogeryClick(2)} // Set active index for this div
+                                onClick={() => SetCatogeryClick(2)} 
                                 className={`cursor-pointer rounded-lg h-[48px] py-[4px] px-[16px] flex items-center transition-colors duration-300 ${catogeryClick === 2
                                     ? "bg-white text-[#6968EC] font-semibold"
                                     : "bg-[#F3F6FF] text-[#71788E] font-medium text-[14px]"
@@ -57,7 +57,7 @@ export default function HeroSection() {
                             </div>
 
                             <div
-                                onClick={() => SetCatogeryClick(3)} // Set active index for this div
+                                onClick={() => SetCatogeryClick(3)} 
                                 className={`cursor-pointer rounded-lg h-[48px] py-[4px] px-[16px] flex items-center transition-colors duration-300 ${catogeryClick === 3
                                     ? "bg-white text-[#6968EC] font-semibold"
                                     : "bg-[#F3F6FF] text-[#71788E] font-medium text-[14px]"

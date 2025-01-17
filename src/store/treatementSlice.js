@@ -26,7 +26,6 @@ export const treatementSlice = createSlice({
 
     savedTreatements: (state) => {
       localStorage.setItem('selectedTreatementItems', JSON.stringify(state.selectedTreatementItems));
-      console.log("meow")
     },
 
     deleteItem: (state, action) => {
