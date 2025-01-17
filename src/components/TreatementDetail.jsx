@@ -1,12 +1,14 @@
 import closeSign from "../assets/closeSign.png"
 import addsign from "../assets/AddSign.png"
 import ArrowDown from "../assets/ArrowDown.png"
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useState } from "react"
+import {selectedTreatement} from "../store/treatementSlice"
 export default function TreatementDetail() {
     const trementailSlicedetails = useSelector((state) => state.treatement.tretementsItemsDetail)
     const treamentProperties = trementailSlicedetails.technology
     const [dropDown, setDropDown] = useState(false)
+    const dispatch = useDispatch()
     return (
         <>
             <div className=" my-12 bg-[#F9FAFF]  px-[8px] pt-[16px] pb-[8px] w-[703px] border h-[375px] rounded-lg ">
@@ -54,6 +56,7 @@ export default function TreatementDetail() {
                                     <div
                                         key={index}
                                         className="cursor-pointer py-2 rounded-lg hover:text-[#6968EC] hover:font-semibold"
+                                        onClick={() => dispatch(selectedTreatement(tech))}
                                     >
                                         <p className="font-montserrat text-[14px]">{tech}</p>
                                     </div>

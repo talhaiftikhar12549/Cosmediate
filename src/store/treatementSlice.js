@@ -2,25 +2,31 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   value: 0,
-  tretementsItemsDetail: null
+  tretementsItemsDetail: null,
+  selectedTreatementItems: [],
 }
 
 export const treatementSlice = createSlice({
   name: 'treatement',
   initialState,
   reducers: {
-    
+
     treatementdetailsection: (state, action) => {
       const selectedcatogery = action.payload
       state.tretementsItemsDetail = selectedcatogery
-      console.log(state.tretementsItemsDetail)
-      console.log(typeof(state.tretementsItemsDetail))
-      
     },
+
+    selectedTreatement: (state, action) => {
+      const selectedItems = action.payload
+      if (!state.selectedTreatementItems.includes(selectedItems)) {
+        state.selectedTreatementItems = [...state.selectedTreatementItems, selectedItems];
+      }
+      console.log(state.selectedTreatementItems)
+    }
   },
 })
 
 
-export const { treatementdetailsection } = treatementSlice.actions
+export const { treatementdetailsection, selectedTreatement } = treatementSlice.actions
 
 export default treatementSlice.reducer
