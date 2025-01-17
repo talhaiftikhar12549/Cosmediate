@@ -14,7 +14,8 @@ export const treatementSlice = createSlice({
       const selectedcatogery = action.payload
       state.tretementsItemsDetail = selectedcatogery
       console.log(state.tretementsItemsDetail)
-
+      console.log(typeof(state.tretementsItemsDetail))
+      
     },
   },
 })
