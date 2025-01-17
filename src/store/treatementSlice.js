@@ -3,7 +3,6 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   value: 0,
   tretementsItemsDetail: null,
-  // selectedTreatementItems: [],
   selectedTreatementItems: JSON.parse(localStorage.getItem('selectedTreatementItems')) || [],
 }
 
@@ -23,17 +22,24 @@ export const treatementSlice = createSlice({
         state.selectedTreatementItems = [...state.selectedTreatementItems, selectedItems];
 
       }
-      console.log(state.selectedTreatementItems)
     },
 
     savedTreatements: (state) => {
       localStorage.setItem('selectedTreatementItems', JSON.stringify(state.selectedTreatementItems));
       console.log("meow")
+    },
+
+    deleteItem: (state, action) => {
+      const deletedItems = action.payload
+      const deletingItem = state.selectedTreatementItems.indexOf(deletedItems);
+      if (deletingItem !== -1) {
+        state.selectedTreatementItems.splice(deletingItem, 1);
+      }
     }
   },
 })
 
 
-export const { treatementdetailsection, selectedTreatement, savedTreatements } = treatementSlice.actions
+export const { treatementdetailsection, selectedTreatement, savedTreatements, deleteItem } = treatementSlice.actions
 
 export default treatementSlice.reducer

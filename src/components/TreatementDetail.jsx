@@ -3,7 +3,7 @@ import addsign from "../assets/AddSign.png"
 import ArrowDown from "../assets/ArrowDown.png"
 import { useSelector, useDispatch } from 'react-redux'
 import { useState } from "react"
-import { selectedTreatement, savedTreatements } from "../store/treatementSlice"
+import { selectedTreatement, savedTreatements, deleteItem } from "../store/treatementSlice"
 export default function TreatementDetail() {
     const trementailSlicedetails = useSelector((state) => state.treatement.tretementsItemsDetail)
     const treamentProperties = trementailSlicedetails.technology
@@ -34,7 +34,7 @@ export default function TreatementDetail() {
                                     <div className="px-[16px] w-[90%] font-montserrat text-[#585C6A] font-medium text-[12px]">
                                         <p>{itm}</p>
                                     </div>
-                                    <div className="px-4 py-4 w-[7%] border-l-[1px] border-[#DADAFC] text-[8px] cursor-pointer">
+                                    <div onClick={() => { dispatch(deleteItem(itm)) }} className="px-4 py-4 w-[7%] border-l-[1px] border-[#DADAFC] text-[8px] cursor-pointer">
                                         <img src={closeSign} alt="closeSign" />
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@ export default function TreatementDetail() {
                         <div className="font-montserrat bg-[#ffffff] rounded-lg text-[#6968EC] py-[15px] w-[50%] flex justify-center items-center mx-1 border font-bold text-[14px]">
                             Cancel
                         </div>
-                        <div onClick={()=>{dispatch(savedTreatements());alert("Itemed Saved !")}}className=" transition-colors duration-300 font-montserrat bg-[#6968EC] rounded-lg text-[#ffffff] hover:bg-[#ffffff] hover:text-[#6968EC] py-[15px] w-[50%] flex justify-center items-center mx-1 border font-bold text-[14px]">
+                        <div onClick={() => { dispatch(savedTreatements()); alert("Itemed Saved !") }} className=" transition-colors duration-300 font-montserrat bg-[#6968EC] rounded-lg text-[#ffffff] hover:bg-[#ffffff] hover:text-[#6968EC] py-[15px] w-[50%] flex justify-center items-center mx-1 border font-bold text-[14px]">
                             Save
                         </div>
                     </div>
