@@ -1,15 +1,18 @@
 import closeSign from "../assets/closeSign.png"
 import addsign from "../assets/AddSign.png"
 import ArrowDown from "../assets/ArrowDown.png"
+import { useSelector } from 'react-redux'
 export default function TreatementDetail ()
+
 {
+    const trementailSlicedetails = useSelector((state) => state.treatement.tretementsItemsDetail)
     return (
         <>
         <div className="my-12 bg-[#F9FAFF]  px-[8px] pt-[16px] pb-[8px] w-[703px] border h-[375px] rounded-lg ">
                 <div className=" pb-[9px] px-[8px]">
                     <div className=" rounded-lg">
                         <h1 className="text-[#444753] font-semibold font-montserrat text-[15px] ">
-                            Skin improvement (4)
+                            {trementailSlicedetails.title} (4)
                         </h1>
                         <p className="font-montserrat text-[#AEB2BF] font-medium text-[11px]">
                             Treatements

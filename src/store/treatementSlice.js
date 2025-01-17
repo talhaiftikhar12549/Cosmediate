@@ -2,17 +2,19 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   value: 0,
+  tretementsItemsDetail: null
 }
 
 export const treatementSlice = createSlice({
-  name: 'counter',
+  name: 'treatement',
   initialState,
   reducers: {
     
     treatementdetailsection: (state, action) => {
       const selectedcatogery = action.payload
-      console.log(selectedcatogery)
-      state.value += action.payload
+      state.tretementsItemsDetail = selectedcatogery
+      console.log(state.tretementsItemsDetail)
+
     },
   },
 })
