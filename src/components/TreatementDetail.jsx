@@ -3,10 +3,13 @@ import addsign from "../assets/AddSign.png"
 import ArrowDown from "../assets/ArrowDown.png"
 import { useSelector, useDispatch } from 'react-redux'
 import { useState } from "react"
-import {selectedTreatement} from "../store/treatementSlice"
+import { selectedTreatement } from "../store/treatementSlice"
 export default function TreatementDetail() {
     const trementailSlicedetails = useSelector((state) => state.treatement.tretementsItemsDetail)
     const treamentProperties = trementailSlicedetails.technology
+    const cartItems = useSelector((state) => state.treatement.selectedTreatementItems)
+    
+    const cartLength = cartItems.length
     const [dropDown, setDropDown] = useState(false)
     const dispatch = useDispatch()
     return (
@@ -15,7 +18,7 @@ export default function TreatementDetail() {
                 <div className=" pb-[9px] px-[8px]">
                     <div className=" rounded-lg">
                         <h1 className="text-[#444753] font-semibold font-montserrat text-[15px] ">
-                            {trementailSlicedetails.title} (4)
+                            {trementailSlicedetails.title} ( {cartLength} )
                         </h1>
                         <p className="font-montserrat text-[#AEB2BF] font-medium text-[11px]">
                             Treatements
@@ -23,12 +26,21 @@ export default function TreatementDetail() {
                     </div>
 
                 </div>
-                <div className=" bg-[#FFFFFF] rounded w-px] h-[177px] border-[1px] border-[#DADAFC]">
+                <div className=" bg-[#FFFFFF] rounded h-[177px] border-[1px] border-[#DADAFC]">
 
-                    <div className="w-[687px]  flex border-b-[1px] border-[#DADAFC] justify-between items-center">
-                        <div className="px-[16px] w-[90%] font-montserrat text-[#585C6A] font-medium text-[12px]"><p className="">Chemical Peel</p></div>
-                        <div className=" px-4  py-4 w-[7%]  border-l-[1px] border-[#DADAFC] text-[8px] cursor-pointer"><img src={closeSign} alt="closeSign" /></div>
-                    </div>
+
+                    {
+                        cartItems.map((itm, index) => (<div>
+                            <div key={index} className="w-[687px]  flex   justify-between items-center">
+                                <div className="px-[16px] w-[90%] font-montserrat text-[#585C6A] font-medium text-[12px]"><p className="">{itm}</p></div>
+                                <div className=" px-4  py-4 w-[7%]  border-l-[1px] border-[#DADAFC] text-[8px] cursor-pointer"><img src={closeSign} alt="closeSign" /></div>
+                            </div>
+                            <div className="border-[#DADAFC] border-[0.5px] w-full"></div>
+                        </div>))
+                    }
+
+
+
                 </div>
 
 
