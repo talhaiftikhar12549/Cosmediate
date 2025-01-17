@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   value: 0,
   tretementsItemsDetail: null,
-  selectedTreatementItems: [],
+  // selectedTreatementItems: [],
+  selectedTreatementItems: JSON.parse(localStorage.getItem('selectedTreatementItems')) || [],
 }
 
 export const treatementSlice = createSlice({
@@ -20,13 +21,19 @@ export const treatementSlice = createSlice({
       const selectedItems = action.payload
       if (!state.selectedTreatementItems.includes(selectedItems)) {
         state.selectedTreatementItems = [...state.selectedTreatementItems, selectedItems];
+
       }
       console.log(state.selectedTreatementItems)
+    },
+
+    savedTreatements: (state) => {
+      localStorage.setItem('selectedTreatementItems', JSON.stringify(state.selectedTreatementItems));
+      console.log("meow")
     }
   },
 })
 
 
-export const { treatementdetailsection, selectedTreatement } = treatementSlice.actions
+export const { treatementdetailsection, selectedTreatement, savedTreatements } = treatementSlice.actions
 
 export default treatementSlice.reducer
