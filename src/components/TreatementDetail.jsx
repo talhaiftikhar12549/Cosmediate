@@ -8,7 +8,7 @@ export default function TreatementDetail() {
     const trementailSlicedetails = useSelector((state) => state.treatement.tretementsItemsDetail)
     const treamentProperties = trementailSlicedetails.technology
     const cartItems = useSelector((state) => state.treatement.selectedTreatementItems)
-    
+
     const cartLength = cartItems.length
     const [dropDown, setDropDown] = useState(false)
     const dispatch = useDispatch()
@@ -26,22 +26,24 @@ export default function TreatementDetail() {
                     </div>
 
                 </div>
-                <div className=" bg-[#FFFFFF] rounded h-[177px] border-[1px] border-[#DADAFC]">
-
-
-                    {
-                        cartItems.map((itm, index) => (<div>
-                            <div key={index} className="w-[687px]  flex   justify-between items-center">
-                                <div className="px-[16px] w-[90%] font-montserrat text-[#585C6A] font-medium text-[12px]"><p className="">{itm}</p></div>
-                                <div className=" px-4  py-4 w-[7%]  border-l-[1px] border-[#DADAFC] text-[8px] cursor-pointer"><img src={closeSign} alt="closeSign" /></div>
-                            </div>
-                            <div className="border-[#DADAFC] border-[0.5px] w-full"></div>
-                        </div>))
-                    }
-
-
-
+                <div className="bg-[#FFFFFF] rounded h-[177px] border-[1px] border-[#DADAFC] overflow-y-auto">
+    {
+        cartItems.map((itm, index) => (
+            <div key={index}>
+                <div className="flex justify-between items-center max-w-full">
+                    <div className="px-[16px] w-[90%] font-montserrat text-[#585C6A] font-medium text-[12px]">
+                        <p>{itm}</p>
+                    </div>
+                    <div className="px-4 py-4 w-[7%] border-l-[1px] border-[#DADAFC] text-[8px] cursor-pointer">
+                        <img src={closeSign} alt="closeSign" />
+                    </div>
                 </div>
+                <div className="border-[#DADAFC] border-[0.5px] w-full"></div>
+            </div>
+        ))
+    }
+</div>
+
 
 
                 <div className="relative " >
